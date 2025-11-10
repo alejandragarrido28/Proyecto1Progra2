@@ -15,11 +15,6 @@ public class Muerte extends PiezaAbstracta {
         super("Muerte", 3, 2, 4, color);
     }
 
-    // La Muerte tiene 3 especialidades: Lanzar lanza (ataque), Conjurar Zombie (movimiento/acción), Ataque Zombie (ataque)
-    
-    // El método abstracto se usa para el ataque que puede hacerse a distancia (Lanzar Lanza) o por Zombie.
-    // Esto se maneja mejor en el controlador de juego al ser una acción de doble propósito.
-    // Aquí simplemente se implementa el Lanzar Lanza.
     @Override
     public boolean esAtaqueEspecialValido(Point objetivo, PiezaAbstracta[][] tablero) {
         // Lanzar Lanza: a 2 casillas delante de él en cualquier dirección (sin obstrucción)

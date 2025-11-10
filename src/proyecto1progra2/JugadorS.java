@@ -21,9 +21,7 @@ public final class JugadorS implements JugadorM {
             if (buscarJugador(username) != null) return false;
             if (!esPasswordValido(password)) return false; 
 
-        // Chequeo de espacio
             if (total >= jugadores.length) {
-            // Aquí podríamos manejar un error de "array lleno"
             System.err.println("Error: No hay espacio para más jugadores.");
             return false;
             }
@@ -49,8 +47,7 @@ public final class JugadorS implements JugadorM {
         try {
             for (int i = 0; i < total; i++) {
                 if (jugadores[i] != null && jugadores[i].getUsername().equalsIgnoreCase(username)) {
-                // ... lógica de eliminación ...
-                jugadores[i].setActivo(false); // La pieza eliminada pone activo a false
+                jugadores[i].setActivo(false);
                 jugadores[i] = null;
                 reorganizar(i);
                 total--;
@@ -64,7 +61,6 @@ public final class JugadorS implements JugadorM {
         }
     }
 
-    // Función recursiva para reorganizar el arreglo
     private void reorganizar(int index) {
         if (index >= jugadores.length - 1 || jugadores[index + 1] == null) return;
         jugadores[index] = jugadores[index + 1];
@@ -88,31 +84,24 @@ public final class JugadorS implements JugadorM {
     }
 
     public boolean esPasswordValido(String password) {
-    // Requisito: DEBE ser exactamente de 5 caracteres – utilizar caracteres especiales
         if (password.length() != 5) return false;
     
-    // Caracteres especiales
         String especiales = "!@#$%^&*()_+-=[]{};':\"\\|,<.>/?";
     
-    // Llama a la función recursiva para validar el carácter especial
         return contieneCaracterEspecialRecursivo(password, especiales, 0);
     }
 
 
-// --- Segunda Función Recursiva Requerida (Requisito 4) ---
     private boolean contieneCaracterEspecialRecursivo(String password, String especiales, int index) {
         if (index >= password.length()) {
-        // Si se recorrió toda la cadena y no se encontró, devuelve false
         return false; 
         }
     
-    // Verifica si el carácter actual está en la lista de especiales
         char c = password.charAt(index);
         if (especiales.indexOf(c) != -1) {
         return true; // Encontrado!
         }
     
-    // Llamada recursiva para el siguiente carácter
         return contieneCaracterEspecialRecursivo(password, especiales, index + 1);
     }
 }

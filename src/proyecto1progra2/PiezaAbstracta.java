@@ -27,36 +27,28 @@ public abstract class PiezaAbstracta {
     public String getColor() { 
     return color; 
     }
-    // --- Funciones Finales Requeridas ---
-    // El movimiento adyacente es común a todas las piezas, no se puede sobrescribir.
+
     public boolean puedeMoverAdyacente(Point destino, PiezaAbstracta[][] tablero) {
-        // Validación de adyacencia (horizontal, vertical o diagonal a 1 casilla)
         int dx = Math.abs(posicion.x - destino.x);
         int dy = Math.abs(posicion.y - destino.y);
         
-        // Verifica si es un movimiento de 1 casilla en cualquier dirección y que el destino esté vacío
         if ((dx <= 1 && dy <= 1) && (dx + dy >= 1) && tablero[destino.x][destino.y] == null) {
             return true;
         }
         return false;
     }
 
-    // --- Función Abstracta Requerida ---
-    // Cada pieza tiene habilidades especiales distintas.
+
     public abstract boolean esAtaqueEspecialValido(Point objetivo, PiezaAbstracta[][] tablero);
     
-    // Método para realizar un ataque especial
     public abstract String realizarAtaqueEspecial(PiezaAbstracta objetivo);
     
-    // --- Métodos Comunes ---
 
-    // Realiza un ataque normal (adyacente, consume escudo primero)
     public String realizarAtaqueNormal(PiezaAbstracta objetivo) {
         int danio = this.ataque;
-        return aplicarDaño(objetivo, danio, false); // false indica que afecta primero al escudo
+        return aplicarDaño(objetivo, danio, false);
     }
 
-    // Lógica para aplicar el daño y actualizar vida/escudo
     protected String aplicarDaño(PiezaAbstracta objetivo, int danio, boolean ignoraEscudo) {
         String mensaje = "";
         
@@ -80,7 +72,6 @@ public abstract class PiezaAbstracta {
         }
     }
     
-    // Getters y Setters
     public String getNombre() { return nombre; }
     public int getVida() { return vida; }
     public int getEscudo() { return escudo; }

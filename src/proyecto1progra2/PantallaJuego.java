@@ -17,7 +17,6 @@ public class PantallaJuego extends JFrame{
     private PiezaAbstracta piezaSeleccionadaRuleta;
     private PiezaAbstracta piezaOrigen; // Pieza seleccionada en el tablero
 
-    // Componentes GUI
     private JButton[][] botonesTablero; // Para representar las casillas
     private JLabel lblTurno;
     private JButton btnRuleta;
@@ -35,10 +34,8 @@ public class PantallaJuego extends JFrame{
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Inicializar componentes
         inicializarComponentes();
         
-        // Llenar tablero (por ejemplo, con texto inicial o íconos)
         actualizarGUI(); 
     }
 
@@ -264,7 +261,6 @@ private void resaltarPiezasMovibles() {
 }
     
     
-    // ... Implementación del manejo de clicks y ataques ...
 
     private void manejarClickCasilla(int fila, int col) {
         try {
@@ -277,7 +273,6 @@ private void resaltarPiezasMovibles() {
         }
 
         if (piezaOrigen == null) {
-            // Primer click: seleccionar pieza
             if (piezaEnClick == null) {
                 logMensaje("Error: Casilla vacía. Selecciona una pieza propia.");
                 return;
@@ -296,9 +291,7 @@ private void resaltarPiezasMovibles() {
             logMensaje("Pieza seleccionada: " + piezaOrigen.getNombre() + ". Selecciona la casilla de destino.");
             
         } else {
-            // Segundo click: mover o atacar
             if (click.equals(piezaOrigen.getPosicion())) {
-                // Deseleccionar
                 piezaOrigen = null;
                 actualizarGUI();
                 return;
@@ -386,7 +379,6 @@ private void resaltarPiezasMovibles() {
                 }
             }
             
-            // Finalizar turno
             finalizarTurno();
             
         }

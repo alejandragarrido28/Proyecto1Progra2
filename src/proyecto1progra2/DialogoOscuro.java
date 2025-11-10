@@ -193,11 +193,11 @@ public class DialogoOscuro {
         JPanel panelInfo = new JPanel(new GridLayout(2, 1, 5, 5));
         panelInfo.setBackground(BG_OSCURO);
         
-        JLabel lblAtacante = new JLabel("⚔️ Atacante: " + nombreAtacante + " (Ataque: " + ataqueAtacante + ")");
+        JLabel lblAtacante = new JLabel("️ Atacante: " + nombreAtacante + " (Ataque: " + ataqueAtacante + ")");
         lblAtacante.setForeground(new Color(100, 200, 100));
         lblAtacante.setFont(new Font("Arial", Font.PLAIN, 14));
         
-        JLabel lblObjetivo = new JLabel("🎯 Objetivo: " + nombreObjetivo + " (Vida: " + vidaObjetivo + ", Escudo: " + escudoObjetivo + ")");
+        JLabel lblObjetivo = new JLabel("? Objetivo: " + nombreObjetivo + " (Vida: " + vidaObjetivo + ", Escudo: " + escudoObjetivo + ")");
         lblObjetivo.setForeground(new Color(200, 100, 100));
         lblObjetivo.setFont(new Font("Arial", Font.PLAIN, 14));
         
@@ -214,7 +214,7 @@ public class DialogoOscuro {
         JPanel panelBotones = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 0));
         panelBotones.setBackground(BG_OSCURO);
         
-        JButton btnNormal = new JButton("⚔️ Ataque Normal");
+        JButton btnNormal = new JButton("️ Ataque Normal");
         btnNormal.setFont(new Font("Arial", Font.BOLD, 14));
         btnNormal.setPreferredSize(new Dimension(160, 40));
         btnNormal.setBackground(new Color(70, 80, 100));
@@ -222,7 +222,7 @@ public class DialogoOscuro {
         btnNormal.setFocusPainted(false);
         btnNormal.setBorder(BorderFactory.createLineBorder(BORDE, 1));
         
-        JButton btnEspecial = new JButton("✨ Ataque Especial");
+        JButton btnEspecial = new JButton(" Ataque Especial");
         btnEspecial.setFont(new Font("Arial", Font.BOLD, 14));
         btnEspecial.setPreferredSize(new Dimension(160, 40));
         btnEspecial.setBackground(new Color(120, 60, 100));

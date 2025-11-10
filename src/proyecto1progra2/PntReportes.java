@@ -32,7 +32,7 @@ public class PntReportes extends JFrame{
         lblTitulo.setForeground(new Color(220, 50, 50));
         lblTitulo.setAlignmentX(Component.CENTER_ALIGNMENT);
         
-        JLabel lblUsuario = new JLabel("📊 " + jugador.getUsername());
+        JLabel lblUsuario = new JLabel(jugador.getUsername());
         lblUsuario.setFont(new Font("Arial", Font.BOLD, 18));
         lblUsuario.setForeground(new Color(180, 180, 190));
         lblUsuario.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -42,9 +42,9 @@ public class PntReportes extends JFrame{
         panelPrincipal.add(lblUsuario);
         panelPrincipal.add(Box.createRigidArea(new Dimension(0, 40)));
         
-        JButton btnRanking = crearBoton("🏆 Ranking de Jugadores", new Color(100, 80, 50));
-        JButton btnLogs = crearBoton("📜 Logs de mis últimos juegos", new Color(70, 80, 100));
-        JButton btnVolver = crearBoton("⬅️ Volver", new Color(60, 60, 70));
+        JButton btnRanking = crearBoton(" Ranking de Jugadores", new Color(100, 80, 50));
+        JButton btnLogs = crearBoton(" Logs de mis últimos juegos", new Color(70, 80, 100));
+        JButton btnVolver = crearBoton("️ Volver", new Color(60, 60, 70));
         
         panelPrincipal.add(btnRanking);
         panelPrincipal.add(Box.createRigidArea(new Dimension(0, 15)));
@@ -77,16 +77,15 @@ public class PntReportes extends JFrame{
 
     private void mostrarRanking(JugadorS storage) {
         Jugador[] ranking = storage.obtenerRanking();
-        StringBuilder sb = new StringBuilder("🏆 RANKING DE JUGADORES 🏆\n\n");
+        StringBuilder sb = new StringBuilder(" RANKING DE JUGADORES \n\n");
         sb.append("Pos | Usuario | Puntos\n");
-        sb.append("─────────────────────────\n");
         int pos = 1;
         for (Jugador p : ranking) {
             String medalla = "";
-            if (pos == 1) medalla = "🥇 ";
-            else if (pos == 2) medalla = "🥈 ";
-            else if (pos == 3) medalla = "🥉 ";
-            else medalla = pos + ". ";
+            if (pos == 1) medalla = " ";
+            else if (pos == 2) medalla = "";
+            else if (pos == 3) medalla = "";
+            else medalla = pos + "";
             
             sb.append(medalla).append(p.getUsername())
               .append(" - ").append(p.getPuntos()).append(" pts\n");

@@ -62,7 +62,6 @@ public class PntMiCuenta extends JFrame{
         
         if (nuevo == null) return; // Operación cancelada
 
-        // Aquí deberías usar la validación completa de JugadorS, no solo la longitud
         if (storage.esPasswordValido(nuevo)) {
             jugador.setPassword(nuevo);
             JOptionPane.showMessageDialog(this, "Password cambiado exitosamente.");
