@@ -39,12 +39,12 @@ public class Ruleta extends JDialog {
         
         String[] tipos = {"Vampiro", "HombreLobo", "Muerte", "Vampiro", "HombreLobo", "Muerte"};
         String[] rutas = {
-            "/proyecto1progra2/Imagenes/Vampiro.jpg",
+            "/proyecto1progra2/Imagenes/Vampiro.png",
             "/proyecto1progra2/Imagenes/Hombre_Lobo.png",
-            "/proyecto1progra2/Imagenes/Muerte.jpg",
-            "/proyecto1progra2/Imagenes/Vampiro.jpg",
+            "/proyecto1progra2/Imagenes/Muerte.png",
+            "/proyecto1progra2/Imagenes/Vampiro.png",
             "/proyecto1progra2/Imagenes/Hombre_Lobo.png",
-            "/proyecto1progra2/Imagenes/Muerte.jpg"
+            "/proyecto1progra2/Imagenes/Muerte.png"
         };
         
         for (int i = 0; i < tipos.length; i++) {
@@ -139,4 +139,5 @@ public class Ruleta extends JDialog {
         return resultadoSeleccionado;
     }
 }
+
 

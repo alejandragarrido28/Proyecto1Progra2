@@ -143,16 +143,16 @@ public class PantallaJuego extends JFrame{
         
         switch (nombre) {
             case "Vampiro":
-                rutaImagen = "/proyecto1progra2/Imagenes/Vampiro.jpg";
+                rutaImagen = "/proyecto1progra2/Imagenes/Vampiro.png";
                 break;
             case "HombreLobo":
                 rutaImagen = "/proyecto1progra2/Imagenes/Hombre_Lobo.png";
                 break;
             case "Muerte":
-                rutaImagen = "/proyecto1progra2/Imagenes/Muerte.jpg";
+                rutaImagen = "/proyecto1progra2/Imagenes/Muerte.png";
                 break;
             case "Zombie":
-                rutaImagen = "/proyecto1progra2/Imagenes/Zombie.jpg";
+                rutaImagen = "/proyecto1progra2/Imagenes/Zombie.png";
                 break;
             default:
                 return null;
